@@ -10,6 +10,7 @@ uniform float shininess;
 varying vec3 interpolatedNormal;
 varying vec3 color;
 
+
 vec3 getReflection(vec3 N, vec3 L) {
     // R = 2(N(NL)) - L
     float NL = dot(N, L);

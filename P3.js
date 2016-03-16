@@ -80,6 +80,10 @@ var phongMaterial = new THREE.ShaderMaterial({
         lightColor: {type: 'c', value: lightColor},
         ambientColor: {type: 'c', value: ambientColor},
         lightPosition: {type: 'v3', value: lightPosition},
+        kAmbient: {type: 'f', value: kAmbient},
+        kDiffuse: {type: 'f', value: kDiffuse},
+        kSpecular: {type: 'f', value: kSpecular},
+        shininess: {type: 'f', value: shininess},
     },
 });
 
@@ -88,6 +92,10 @@ var blinnphongMaterial = new THREE.ShaderMaterial({
         lightColor: {type: 'c', value: lightColor},
         ambientColor: {type: 'c', value: ambientColor},
         lightPosition: {type: 'v3', value: lightPosition},
+        kAmbient: {type: 'f', value: kAmbient},
+        kDiffuse: {type: 'f', value: kDiffuse},
+        kSpecular: {type: 'f', value: kSpecular},
+        shininess: {type: 'f', value: shininess},
     },
 });
 
@@ -96,6 +104,10 @@ var coolwarmMaterial = new THREE.ShaderMaterial({
         lightColor: {type: 'c', value: lightColor},
         ambientColor: {type: 'c', value: ambientColor},
         lightPosition: {type: 'v3', value: lightPosition},
+        kAmbient: {type: 'f', value: kAmbient},
+        kDiffuse: {type: 'f', value: kDiffuse},
+        kSpecular: {type: 'f', value: kSpecular},
+        shininess: {type: 'f', value: shininess},
     },
 });
 
@@ -199,9 +211,9 @@ keyboard.domElement.addEventListener('keydown', onKeyDown);
 
 function onKeyDown(event) {
     if (keyboard.eventMatches(event, "1")) {
+        console.log('hi');
         for (var i in armadillo.children) {
             armadillo.children[i].material = gouraudMaterial;
-            console.log(gouraudMaterial.varying['P']);
         }
     } else if (keyboard.eventMatches(event, "2")) {
         for (var i in armadillo.children) {
