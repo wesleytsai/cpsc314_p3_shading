@@ -40,7 +40,7 @@ void main() {
     vec3 L = normalize(l2w(lightPosition) - P);
     vec3 V = normalize(l2p(-ipos));
 
-    vec3 halfway = (V + L);
+    vec3 halfway = normalize(V + L);
     // Is = Ks * Il * (VR)^n
     vec3 ambientLight = kAmbient * ambientColor;
     vec3 specularLight = kSpecular * lightColor * pow(max(dot(halfway, N), 0.0), shininess);
