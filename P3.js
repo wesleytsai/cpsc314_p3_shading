@@ -47,7 +47,7 @@ scene.add(floor);
 // LIGHTING UNIFORMS
 var lightColor = new THREE.Color(1, 1, 1);
 var ambientColor = new THREE.Color(0.4, 0.4, 0.4);
-var lightPosition = new THREE.Vector3(70, 100, 70);
+var lightPosition = new THREE.Vector3(70, 250, 70);
 
 var litColor = new THREE.Color(0.3, 0.4, 0.6);
 var unLitColor = new THREE.Color(0.15, 0.2, 0.3);
