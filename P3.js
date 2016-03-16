@@ -201,6 +201,7 @@ function onKeyDown(event) {
     if (keyboard.eventMatches(event, "1")) {
         for (var i in armadillo.children) {
             armadillo.children[i].material = gouraudMaterial;
+            console.log(gouraudMaterial.varying['P']);
         }
     } else if (keyboard.eventMatches(event, "2")) {
         for (var i in armadillo.children) {
