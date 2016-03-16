@@ -25,15 +25,19 @@ vec3 l2w(vec3 vec) {
     return vec3(modelMatrix * vec4(vec, 0.0));
 }
 
+vec3 l2p(vec3 vec) {
+    return vec3(projectionMatrix * modelViewMatrix * vec4(vec, 0.0));
+}
+
 void main() {
     interpolatedNormal = normal;
     gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
 
-    vec3 N = l2w(normal);
-    vec3 P = l2w(position);
+    vec3 N = normalize(l2v(normal));
+    vec3 P = l2v(position);
 
-    vec3 L = normalize(P - l2w(lightPosition));
-    vec3 V = normalize(l2v(-position));
+    vec3 L = normalize(l2w(lightPosition) - P);
+    vec3 V = normalize(l2p(-position));
 
     vec3 R = getReflection(N, L);
 
