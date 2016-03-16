@@ -68,6 +68,10 @@ var gouraudMaterial = new THREE.ShaderMaterial({
         lightColor: {type: 'c', value: lightColor},
         ambientColor: {type: 'c', value: ambientColor},
         lightPosition: {type: 'v3', value: lightPosition},
+        kAmbient: {type: 'f', value: kAmbient},
+        kDiffuse: {type: 'f', value: kDiffuse},
+        kSpecular: {type: 'f', value: kSpecular},
+        shininess: {type: 'f', value: shininess},
     },
 });
 
@@ -110,7 +114,6 @@ new THREE.SourceLoader().load(shaderFiles, function (shaders) {
     gouraudMaterial.vertexShader = shaders['glsl/gouraud.vs.glsl'];
     gouraudMaterial.fragmentShader = shaders['glsl/gouraud.fs.glsl'];
     gouraudMaterial.needsUpdate = true;
-    gouraudMaterial.wireframe = true;
 
     phongMaterial.vertexShader = shaders['glsl/phong.vs.glsl'];
     phongMaterial.fragmentShader = shaders['glsl/phong.fs.glsl'];
